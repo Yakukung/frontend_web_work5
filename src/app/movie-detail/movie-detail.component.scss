@@ -1,0 +1,50 @@
+.container-fluid{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+.card-poster{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+    & img{
+        width: 400px;
+    }
+}
+.nav{
+    padding: 4rem;
+    background-color: black;
+    & button{
+        border-radius: 11px;
+    }
+}
+.col-6{
+    height: 100vh;
+    background-color: black;
+}
+.card-detail{
+    background-color: black;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+}
+
+h1{
+    color: white;
+    font-size: 65px;
+    margin-bottom: 2rem;
+}
+h2{
+    color: white;
+}
+span{
+    color: white;
+}

@@ -1,0 +1,39 @@
+<div class="nav">
+    <button mat-flat-button color="primary" (click)="backhome()">Movie</button>
+</div>
+<div class=".container-fluid">
+    <div class="movie-container">
+        <div *ngIf="movieDetails" class="row">
+            <div class="col-6">
+                <div class="card-poster">
+                    <img src="{{  movieDetails.movie[0].poster }}" alt="">
+                </div>
+            </div>
+            <div class="col-6">
+               <div class="card-detail">
+                <div class="card-in">
+                    <h1>{{ movieDetails.movie[0].movie_name }}</h1>
+                    <h2>{{ movieDetails.movie[0].plot }}</h2>
+                    <div class="creator-star">
+                        <span>Creators: </span>
+                        <span *ngFor="let personDetail of movieDetails.person">
+                            <span *ngIf="personDetail.preson_type === 'creator'">
+                              <span>{{ personDetail.name }}, </span>
+                            </span>
+                        </span>
+                        <br>
+                        <span>Stars: </span>
+                        <span *ngFor="let personDetail of movieDetails.person">
+                            <span *ngIf="personDetail.preson_type === 'star'">
+                              <span>{{ personDetail.name }}, </span>
+                            </span>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

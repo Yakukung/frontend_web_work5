@@ -1,0 +1,29 @@
+<!-- movie.component.html -->
+<div class="nav">
+    <div class="btn">
+            <button mat-flat-button color="primary" (click)="movieList()">Movie</button>
+            <button mat-flat-button color="primary" (click)="personList()">Person</button>
+            <button mat-flat-button color="primary" (click)="starList()">Star</button>
+            <button mat-flat-button color="primary" (click)="creatorList()">Creator</button>
+    </div> 
+    <div class="search">
+        <input matInput placeholder="Search for movies" type="text" #movieName name="name">
+        <button mat-flat-button color="primary" (click)="search(movieName)">Search</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="movie-container">
+        <div *ngFor="let movie of movies" class="row">
+            <div class="card-movie" (click)="movie_detail(movie.movie_id)">
+                <div class="card-head">
+                    <img [src]="movie.poster" alt="{{ movie.movie_name }} Poster">
+                    <div class="card-body">
+                        <h2>{{ movie.movie_name }}</h2>
+                        <p>Genre: {{ movie.genre }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
