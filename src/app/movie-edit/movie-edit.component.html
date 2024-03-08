@@ -1,55 +1,47 @@
 <div class="nav">
     <button mat-flat-button color="primary" (click)="backhome()">Movie</button>
-</div>
-<div class=".container-fluid">
+  </div>
+  
+  <div class="container-fluid">
     <div class="movie-container">
-        <div *ngIf="movieDetails" class="row">
-            <div class="col-4">
-                <div class="card-poster">
-                    <img src="{{  movieDetails.movie[0].poster }}" alt="">
+      <div class="row">
+        <div class="col-12">
+          <div class="card-edit">
+            <div class="card-in">
+              <span style="margin-right: 4rem;">Movie:
+                <mat-form-field appearance="outline" style="width: 90%; margin-left: 1.2rem;">
+                  <mat-label>Movie</mat-label>
+                  <input matInput type="text" [(ngModel)]="movie_name" name="movie_name">
+                </mat-form-field>
+              </span>
+              <span style="margin-right: 2.3rem;">Poster:
+                <mat-form-field appearance="outline" style=" width: 90%; margin-left: 1rem;">
+                  <mat-label>Poster</mat-label>
+                  <input matInput type="text" [(ngModel)]="poster" name="poster">
+                </mat-form-field>
+              </span>
+              <span style="margin-right: 2.3rem;">Plot:
+                <mat-form-field appearance="outline" style=" width: 90%; margin-left: 2.8rem;">
+                  <mat-label>Plot</mat-label>
+                  <input matInput type="text" [(ngModel)]="plot" name="plot">
+                </mat-form-field>
+              </span>
+              <div class="creator-star">
+                <span style="margin-right: 2.3rem;">Genre: </span>
+                <mat-form-field appearance="outline">
+                  <mat-label>Genre</mat-label>
+                  <mat-select [(ngModel)]="selectedGenre" name="genre">
+                    <mat-option *ngFor="let genre of genres" [value]="genre">{{ genre }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <div class="btnSave">
+                  <button mat-flat-button color="primary" (click)="saveMovie()">Save</button>
                 </div>
+              </div>
             </div>
-            <div class="col-8">
-               <div class="card-edit">
-                <div class="card-in">
-                    <span style="margin-right: 4rem;">Movie: 
-                    <mat-form-field appearance="outline" style=" width: 80%; margin-left: 1rem;">
-                        <mat-label>{{  movieDetails.movie[0].movie_name }}</mat-label>
-                        <input matInput placeholder="{{  movieDetails.movie[0].movie_name }}">
-                        </mat-form-field>
-                    </span>
-                    <span style="margin-right: 2.3rem;">Plot: 
-                        <mat-form-field appearance="outline" style=" width: 80%; margin-left: 1rem;">
-                        <mat-label>{{ movieDetails.movie[0].plot }}</mat-label>
-                        <input matInput placeholder="{{ movieDetails.movie[0].plot }}">
-                        </mat-form-field>
-                    </span>
-                    <div class="creator-star">
-                        <span style="margin-right: 1rem; width: 100px;">Creators: </span>
-                            <span *ngFor="let personDetail of movieDetails.person">
-                                <span *ngIf="personDetail.preson_type === 'creator'">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>{{ personDetail.name }}</mat-label>
-                                    <input matInput placeholder="{{ personDetail.name }}">
-                                    </mat-form-field>
-                            </span>
-                        </span>
-                        <br>
-                        <span style="margin-right: 2.3rem;">Stars: </span>
-                            <span *ngFor="let personDetail of movieDetails.person">
-                                <span *ngIf="personDetail.preson_type === 'star'">
-                                    <mat-form-field appearance="outline">
-                                    <mat-label>{{ personDetail.name }}</mat-label>
-                                    <input matInput placeholder="{{ personDetail.name }}">
-                                    </mat-form-field>
-                            </span>
-                        </span>
-                    </div>
-                    <button mat-flat-button color="primary" (click)="saveEdit()">Save</button>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-
+  </div>
+  

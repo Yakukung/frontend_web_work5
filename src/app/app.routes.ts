@@ -20,6 +20,5 @@ export const routes: Routes = [
     { path: 'creator-edit', component: CreatorEditComponent},
     { path: 'star-edit', component: StarEditComponent},
     { path: 'person-edit', component: PersonEditComponent},
-
-    
+    { path: 'sertMovie', component: MovieEditComponent },
 ];

@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class MovieListComponent implements OnInit {
 
-
   constructor(private router: Router, private route: ActivatedRoute, private httpClient: HttpClient) {}
 
   movies: any[] = [];
@@ -60,6 +59,7 @@ export class MovieListComponent implements OnInit {
     );
   }
 
+
   movieSert() {
     this.router.navigate(['/movie-edit']);
     }
@@ -67,4 +67,5 @@ export class MovieListComponent implements OnInit {
       this.router.navigate(['/']);
     }
 
+    
 }
